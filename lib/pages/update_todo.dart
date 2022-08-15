@@ -30,7 +30,6 @@ class _UpdateTodoState extends State<UpdateTodo> {
 
   @override
   void initState() {
-    widget.updateTodo(widget.todo);
     _titleController.text = widget.todo.title;
     _descController.text = widget.todo.desc;
     super.initState();
