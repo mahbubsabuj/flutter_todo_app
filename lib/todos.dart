@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/models/todo_model.dart';
 import 'package:todo_app/pages/add_todo.dart';
+import 'package:todo_app/pages/file_picker.dart';
 import 'package:todo_app/styles.dart';
 import 'package:todo_app/todo.dart';
 
@@ -159,12 +160,23 @@ class _TodosHomeState extends State<TodosHome> {
 
   @override
   Widget build(BuildContext context) {
-    String subHeading = '';
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Todo App',
       home: Builder(
         builder: (context) => Scaffold(
           appBar: AppBar(
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.file_copy),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FilePickerTest(),
+                  ),
+                ),
+              ),
+            ],
             title: const Text('Todo App'),
           ),
           body: Padding(
