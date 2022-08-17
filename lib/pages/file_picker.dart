@@ -33,9 +33,8 @@ class _FilePickerTestState extends State<FilePickerTest> {
   void _pickImage() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       dialogTitle: 'Select an image',
-      allowedExtensions: ['jpg', 'png', 'jpeg'],
       allowMultiple: false,
-      type: FileType.custom,
+      type: FileType.image,
     );
     if (result != null) {
       _showMyDialog('PDF', result.files.single.path);

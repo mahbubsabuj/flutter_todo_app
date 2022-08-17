@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/models/todo_model.dart';
 import 'package:todo_app/pages/add_todo.dart';
 import 'package:todo_app/pages/file_picker.dart';
+import 'package:todo_app/pages/files_operations.dart';
 import 'package:todo_app/styles.dart';
 import 'package:todo_app/todo.dart';
 
@@ -174,6 +175,18 @@ class _TodosHomeState extends State<TodosHome> {
                   MaterialPageRoute(
                     builder: (context) => FilePickerTest(),
                   ),
+                ),
+              ),
+              IconButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FilesOperations(),
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.file_download,
+                  color: Colors.amber,
                 ),
               ),
             ],
