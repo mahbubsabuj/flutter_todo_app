@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_app/models/todo_model.dart';
 import 'package:todo_app/pages/add_todo.dart';
+import 'package:todo_app/pages/charts.dart';
 import 'package:todo_app/pages/file_picker.dart';
 import 'package:todo_app/pages/files_operations.dart';
 import 'package:todo_app/styles.dart';
@@ -168,6 +169,14 @@ class _TodosHomeState extends State<TodosHome> {
         builder: (context) => Scaffold(
           appBar: AppBar(
             actions: [
+              IconButton(
+                  onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChartsPage(),
+                        ),
+                      ),
+                  icon: const Icon(Icons.auto_graph, color: Colors.yellow)),
               IconButton(
                 icon: const Icon(Icons.file_copy),
                 onPressed: () => Navigator.push(
